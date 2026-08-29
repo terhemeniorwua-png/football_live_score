@@ -6,26 +6,48 @@ import { useEffect, useState } from 'react'
 
 const Teams = () => {
 
-    const [team1Score, setTeam1Score] = useState(0)
+     const [team1Score, setTeam1Score] = useState(0)
     const [team2Score, setTeam2Score] = useState(0)
+
+        const [team1Score1, setTeam1Score1] = useState(0)
+    const [team2Score2, setTeam2Score2] = useState(0)
+
+    let [matchTimer, setMatchTimer] = useState(0)
+
+   if(matchTimer === 50){
+
+    setTeam1Score1(team1Score)
+    setTeam2Score2(team2Score)
+
+    setMatchTimer(0)
+    setTeam1Score(0)
+    setTeam2Score(0)
+  
+
+    
+ }
+
+
+   useEffect(()=>{
+    
+    setInterval(()=>{
+        setMatchTimer(prevMatchTimer => prevMatchTimer + 1 )
+    }, 1000)
+   }, [])
 
     
 
     useEffect(()=>{
         setInterval(()=>{
-            let timeInterval = Math.floor(1000 + Math.random() * 5000)
+            let timeInterval = Math.floor(5000 + Math.random() * 10000)
 
     setTimeout(()=>{
         setTeam2Score(prevTeam1Score => prevTeam1Score + 1)
     }, timeInterval)
         }, 7000)
-     
-    }, [])
 
-
-    useEffect(()=>{
     setInterval(()=>{
-        let timeInterval2 = Math.floor(1000 + Math.random() * 5000)
+        let timeInterval2 = Math.floor(5000 + Math.random() * 10000)
 
          setTimeout(()=>{
         setTeam1Score(prevTeam1Score => prevTeam1Score + 1)
@@ -35,7 +57,6 @@ const Teams = () => {
    
      
     }, [])
-
 
 
     //     const [team3Score, setTeam3Score] = useState(0)
@@ -56,41 +77,34 @@ const Teams = () => {
     // }, [])
 
 
-    const matchtiming = Date().iso
-
-
 
     return ( 
         <>
-        <h1 className='mt-32 text-white'>{matchtiming}</h1>
+        <h1 className='mt-32 text-white text-center text-6xl font-bold'>{matchTimer}</h1>
 
-             <div className=' py-2 w-[20%] m-auto flex  justify-center items-center gap-20'>
+       <div>
+              <div className=' py-2 w-[20%] m-auto flex  justify-center items-center gap-20'>
 
                   
                      <img src= {Arsenal} alt="" className=' h-36'/>
                     <span className='font-black text-amber-500 text-6xl'>{team1Score}</span>
                   
 
-                    <h1 className='text-8xl font-black text-white'>VS</h1>
+                    <h1 className='text-8xl font-black text-amber-300'>VS</h1>
 
                      <span className='font-black text-amber-500 text-6xl'>{team2Score}</span>
 
                     <img src= {chelsea} alt="" className=' h-36'/>
             </div>
 
-{/* 
-            <div className=' py-2 flex justify-center ml-20 items-center gap-32'>
-                     <img src= {psg} alt="" className=' h-36'/>
+            <div className='text-white'>
+               <h2> Match statistic</h2>
 
-                     <span className='font-black text-amber-500 text-6xl'>{team3Score}</span>
-
-                    <h1 className='text-8xl font-black text-white'>VS</h1>
-
-                    <span className='font-black text-amber-500 text-6xl'>{team4Score}</span>
-
-                      <img src= {manCcity} alt="" className=' h-36'/>
+                <p>Arsenal {team1Score1} - Chelsea {team2Score2}</p>
             </div>
-                   */}
+       </div>
+
+
                   
         </>
      );
