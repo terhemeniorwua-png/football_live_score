@@ -113,7 +113,7 @@ const Teams = () => {
               <div className=' py-2 md:w-[20%] m-auto flex max-md:flex-col justify-center items-center gap-5 md:gap-20'>
 
                   
-                     <img src= {Arsenal} alt="" className=' h-36'/>
+                     <img src= {Arsenal} alt="" className='h-20 md:h-36'/>
                     <span className='font-black text-amber-500 text-6xl'>{team1Score}</span>
                   
 
@@ -121,11 +121,11 @@ const Teams = () => {
 
                      <span className='font-black text-amber-500 text-6xl'>{team2Score}</span>
 
-                    <img src= {chelsea} alt="" className=' h-36'/>
+                    <img src= {chelsea} alt="" className='h-20 md:h-36'/>
             </div>
 
             <div className='text-white text-center space-y-5 pt-5'>
-               <h2 className='text-4xl font-black'> Match History</h2>
+               <h2 className= 'text-2xl md:text-4xl font-black'> Match History</h2>
 
                 <p>Arsenal <span className='font-bold'>{team1Score1}</span> <span className='text-2xl text-amber-400'>|</span> Chelsea <span className='font-bold'>{team2Score2}</span></p>
             </div>
