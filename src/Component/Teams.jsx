@@ -39,7 +39,7 @@ const Teams = () => {
 
     useEffect(()=>{
         setInterval(()=>{
-            let timeInterval = Math.floor(5000 + Math.random() * 10000)
+            let timeInterval = Math.floor(10000 + Math.random() * 15000)
 
     setTimeout(()=>{
         setTeam2Score(prevTeam1Score => prevTeam1Score + 1)
@@ -47,7 +47,7 @@ const Teams = () => {
         }, 7000)
 
     setInterval(()=>{
-        let timeInterval2 = Math.floor(5000 + Math.random() * 10000)
+        let timeInterval2 = Math.floor(10000 + Math.random() * 15000)
 
          setTimeout(()=>{
         setTeam1Score(prevTeam1Score => prevTeam1Score + 1)
@@ -80,7 +80,7 @@ const Teams = () => {
 
     return ( 
         <>
-        <h1 className='mt-32 text-white text-center text-6xl font-bold'>{matchTimer}</h1>
+        <p className='mt-32 text-white text-center text-4xl'>Time: {matchTimer}</p>
 
        <div>
               <div className=' py-2 w-[20%] m-auto flex  justify-center items-center gap-20'>
@@ -97,10 +97,10 @@ const Teams = () => {
                     <img src= {chelsea} alt="" className=' h-36'/>
             </div>
 
-            <div className='text-white'>
-               <h2> Match statistic</h2>
+            <div className='text-white text-center space-y-5 pt-5'>
+               <h2 className='text-4xl font-black'> Match statistic</h2>
 
-                <p>Arsenal {team1Score1} - Chelsea {team2Score2}</p>
+                <p>Arsenal {team1Score1} <span className='text-2xl text-amber-400'>|</span> Chelsea {team2Score2}</p>
             </div>
        </div>
 
