@@ -107,10 +107,10 @@ const Teams = () => {
 
     return ( 
         <>
-        <p className='mt-32 text-white text-center text-4xl'>Time: {matchTimer}</p>
+        <p className='md:mt-32 sm:mt-10 text-white text-center text-4xl'>Time: {matchTimer}</p>
 
-       <div>
-              <div className=' py-2 w-[20%] m-auto flex  justify-center items-center gap-20'>
+       <div className='sm:space-y-5'>
+              <div className=' py-2 md:w-[20%] m-auto flex max-md:flex-col justify-center items-center gap-5 md:gap-20'>
 
                   
                      <img src= {Arsenal} alt="" className=' h-36'/>
@@ -125,9 +125,9 @@ const Teams = () => {
             </div>
 
             <div className='text-white text-center space-y-5 pt-5'>
-               <h2 className='text-4xl font-black'> Match statistic</h2>
+               <h2 className='text-4xl font-black'> Match History</h2>
 
-                <p>Arsenal {team1Score1} <span className='text-2xl text-amber-400'>|</span> Chelsea {team2Score2}</p>
+                <p>Arsenal <span className='font-bold'>{team1Score1}</span> <span className='text-2xl text-amber-400'>|</span> Chelsea <span className='font-bold'>{team2Score2}</span></p>
             </div>
        </div>
 
