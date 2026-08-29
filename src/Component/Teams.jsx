@@ -110,7 +110,7 @@ const Teams = () => {
         <p className='md:mt-32 sm:mt-10 text-white text-center text-4xl'>Time: {matchTimer}</p>
 
        <div className='sm:space-y-5'>
-              <div className=' py-2 md:w-[20%] m-auto flex max-md:flex-col justify-center items-center gap-5 md:gap-20'>
+              <div className=' py-2 md:w-[20%] m-auto flex md:flex-col justify-center items-center gap-5 md:gap-20'>
 
                   
                      <img src= {Arsenal} alt="" className='h-20 md:h-36'/>
