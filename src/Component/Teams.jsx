@@ -47,7 +47,7 @@ const Teams = () => {
 
             
         let timeInterval2 = Math.floor(10000 + Math.random() * 25000)
-        let timeInterval = Math.floor(10000 + Math.random() * 25000)
+        let timeInterval = Math.floor(8000 + Math.random() * 25000)
 
         let interval1;
         let interval2;
@@ -107,7 +107,7 @@ const Teams = () => {
 
     return ( 
         <>
-        <p className='mt-32  text-white text-center font-semibold md:text-4xl'>Time: {matchTimer}</p>
+        <p className='mt-32  text-white text-center font-semibold md:text-4xl bg-[#032478b7] p-2 w-[35%] rounded-3xl md:w-[20%] m-auto'>Time: {matchTimer}</p>
 
        <div>
               <div className=' py-2 md:w-[20%] m-auto flex justify-center items-center gap-5 md:gap-20'>
