@@ -14,7 +14,8 @@ const Teams = () => {
 
     let [matchTimer, setMatchTimer] = useState(0)
 
-   if(matchTimer === 50){
+   useEffect(()=>{
+    if(matchTimer >= 50){
 
     setTeam1Score1(team1Score)
     setTeam2Score2(team2Score)
@@ -26,36 +27,53 @@ const Teams = () => {
 
     
  }
+   }, [matchTimer])
 
 
    useEffect(()=>{
     
-    setInterval(()=>{
+    let interval = setInterval(()=>{
         setMatchTimer(prevMatchTimer => prevMatchTimer + 1 )
     }, 1000)
+
+    return ()=>clearInterval(interval)
    }, [])
 
     
 
     useEffect(()=>{
-        setInterval(()=>{
-            let timeInterval = Math.floor(10000 + Math.random() * 15000)
 
-    setTimeout(()=>{
-        setTeam2Score(prevTeam1Score => prevTeam1Score + 1)
-    }, timeInterval)
-        }, 7000)
-
-    setInterval(()=>{
+            
         let timeInterval2 = Math.floor(10000 + Math.random() * 15000)
+        let timeInterval = Math.floor(10000 + Math.random() * 15000)
 
-         setTimeout(()=>{
+        let interval1;
+        let interval2;
+
+         const arsenalGoal = () =>{
+
+        interval1 = setTimeout(()=>{
+            
+         setTeam2Score(prevTeam1Score => prevTeam1Score + 1)
+            arsenalGoal()
+        }, timeInterval2)
+ }
+
+ const chelseaGoal = () =>{
+
+    interval2 = setTimeout(()=>{
         setTeam1Score(prevTeam1Score => prevTeam1Score + 1)
-    }, timeInterval2)
-    }, 5000)
+    chelseaGoal()
+
+    }, timeInterval)
+    return ()=>{
+        clearInterval(interval1)
+        clearInterval(interval2)
     
+    }
+        
+ }
    
-     
     }, [])
 
 
