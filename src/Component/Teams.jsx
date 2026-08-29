@@ -14,6 +14,8 @@ const Teams = () => {
 
     let [matchTimer, setMatchTimer] = useState(0)
 
+    
+
    useEffect(()=>{
     if(matchTimer >= 50){
 
@@ -44,8 +46,8 @@ const Teams = () => {
     useEffect(()=>{
 
             
-        let timeInterval2 = Math.floor(10000 + Math.random() * 15000)
-        let timeInterval = Math.floor(10000 + Math.random() * 15000)
+        let timeInterval2 = Math.floor(10000 + Math.random() * 25000)
+        let timeInterval = Math.floor(10000 + Math.random() * 25000)
 
         let interval1;
         let interval2;
@@ -66,13 +68,20 @@ const Teams = () => {
     chelseaGoal()
 
     }, timeInterval)
+
+   
+        
+ }
+
+  arsenalGoal()
+    chelseaGoal()
+
+
     return ()=>{
         clearInterval(interval1)
         clearInterval(interval2)
     
     }
-        
- }
    
     }, [])
 
