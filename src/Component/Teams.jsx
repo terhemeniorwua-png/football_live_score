@@ -114,12 +114,12 @@ const Teams = () => {
 
                   
                      <img src= {Arsenal} alt="" className='h-20 md:h-36'/>
-                    <span className='font-black text-amber-500 text-6xl'>{team1Score}</span>
+                    <span className='font-black text-amber-500 text-3xl md:text-6xl'>{team1Score}</span>
                   
 
-                    <h1 className='text-8xl font-black text-amber-300'>VS</h1>
+                    <h1 className='text-3xl md:text-8xl font-black text-amber-300'>VS</h1>
 
-                     <span className='font-black text-amber-500 text-6xl'>{team2Score}</span>
+                     <span className='font-black text-amber-500 text-3xl md:text-6xl'>{team2Score}</span>
 
                     <img src= {chelsea} alt="" className='h-20 md:h-36'/>
             </div>
